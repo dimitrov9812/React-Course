@@ -1,3 +1,4 @@
+
 class IndecisionApp extends React.Component {
     constructor(props) {
       super(props);
@@ -5,7 +6,7 @@ class IndecisionApp extends React.Component {
       this.handlePick = this.handlePick.bind(this);
       this.handleAddOption = this.handleAddOption.bind(this);
       this.state = {
-        options: []
+        options: ["Hello","Test","Message"]
       };
     }
     handleDeleteOptions() {
@@ -38,7 +39,7 @@ class IndecisionApp extends React.Component {
       const subtitle = 'Put your life in the hands of a computer';
   
       return (
-        <div>
+        <div id="wrap">
           <Header title={title} subtitle={subtitle} />
           <Action
             hasOptions={this.state.options.length > 0}
@@ -59,7 +60,7 @@ class IndecisionApp extends React.Component {
   class Header extends React.Component {
     render() {
       return (
-        <div>
+        <div id="head">
           <h1>{this.props.title}</h1>
           <h2>{this.props.subtitle}</h2>
         </div>
@@ -70,8 +71,9 @@ class IndecisionApp extends React.Component {
   class Action extends React.Component {
     render() {
       return (
-        <div>
+        <div id="action">
           <button
+            id="action-button"
             onClick={this.props.handlePick}
             disabled={!this.props.hasOptions}
           >
@@ -85,13 +87,12 @@ class IndecisionApp extends React.Component {
   class Options extends React.Component {
     render() {
       return (
-        <div>
-          <button onClick={this.props.handleDeleteOptions}>Remove All</button>
-          <ol>
+        <div id="options">
+          <button id="remove-button" onClick={this.props.handleDeleteOptions}>Remove All</button>
+         
           {
             this.props.options.map((option) => <Option key={option} optionText={option} />)
           }
-          </ol>
           
         </div>
       );
@@ -101,8 +102,8 @@ class IndecisionApp extends React.Component {
   class Option extends React.Component {
     render() {
       return (
-        <div>
-          <li>{this.props.optionText}</li>
+        <div id="option">
+          {this.props.optionText}
         </div>
       );
     }
@@ -128,11 +129,11 @@ class IndecisionApp extends React.Component {
     }
     render() {
       return (
-        <div>
-          {this.state.error && <p>{this.state.error}</p>}
+        <div id="add-option">
+          {this.state.error && <p id="error">{this.state.error}</p>}
           <form onSubmit={this.handleAddOption}>
-            <input type="text" name="option" />
-            <button>Add Option</button>
+            <input type="text" id="text-field" name="option" />
+            <button id="add-button">Add Option</button>
           </form>
         </div>
       );
