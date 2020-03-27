@@ -3,7 +3,7 @@
  console.log(path.join(__dirname,"public"));
 
  module.exports = {
-    entry: "./src/playground/Webpack-Import-Export-Practice/app.js",
+    entry: "./src/app.js",
     output:{
         path: path.join(__dirname,"public"),
         filename:'bundle.js'
@@ -14,6 +14,7 @@
             test: /\.js$/,
             exclude: /node_modules/
         }]
-    }
+    },
+    devtool: 'cheap-module-eval-source-map'
  };
 
