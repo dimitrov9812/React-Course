@@ -2,8 +2,7 @@
  import Option from './Option';
 
  //Options stateless function
- const Options = (props) => {
-    return (
+ const Options = (props) => (
       <div id="options">
         <div id="remove-div">
           <button id="remove-button" onClick={props.handleDeleteOptions}>Remove All</button>
@@ -13,8 +12,8 @@
           props.options.map((option) => <Option key={option} optionText={option} />)
         }
       </div>
-    );
-  };
+  );
+
   
   export default Options;
   //Old class based component: 

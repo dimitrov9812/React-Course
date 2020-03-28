@@ -1,14 +1,12 @@
 import React from 'react';
 
   //Header stateless function
-  const Header = (props) => {
-    return (
+  const Header = (props) => (
       <div id="head">
         <h1>{props.title}</h1>
        {props.subtitle &&  <h2>{props.subtitle}</h2>}
       </div>
     );
-  };
   //Set Default props values for the Header component
   Header.defaultProps = {
     title: "Indecision"

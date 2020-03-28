@@ -3,53 +3,42 @@ import AddOption from './AddOption';
 import Options from './Options';
 import Action from './Action';
 import Header from './Header';
+import Modal from './OptionModal'
+import OptionModal from './OptionModal';
 
 class IndecisionApp extends React.Component {
-    constructor(props) {
-      super(props);
-      this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-      this.handlePick = this.handlePick.bind(this);
-      this.handleAddOption = this.handleAddOption.bind(this);
-      this.handleDeleteOption = this.handleDeleteOption.bind(this);
-      this.state = {
-        options: []
+      state = {
+        options: ["Hello"],
+        selectedOption: undefined
       };
-    }
-    //life cycle methods - fire only in class components
-    componentDidMount(){
-      const json = localStorage.getItem("options");
-      const optionsJson = JSON.parse(json);
-      console.log(optionsJson);
-      if(options){
-        this.setState(() => ({
-          options: optionsJson
-        }))
+    //event for our Modal button -> toggles the modal visibility
+    handleModalClose = () => {
+        this.setState(() => {
+          return {
+            selectedOption: undefined
+          };
+        });
       }
-    }
-    //another life cycle method
-    componentDidUpdate(prevProps, prevState){
-      if(prevState.options.length !== this.state.options.length){
-        const json = JSON.stringify(this.state.options);
-        localStorage.setItem("options",json);
-      }
-    } 
-    //another life cycle method
-    componentWillUnMount(){
-      console.log("componentWillMount");
-    }
-    handleDeleteOptions() {
+    //event for deleting all of our options
+    handleDeleteOptions = () => {
       this.setState(() => {
         return {
           options: []
         };
       });
     }
-    handlePick() {
+    //event for picking a random option and activation the modal for showing that option
+    handlePick = () => {
       const randomNum = Math.floor(Math.random() * this.state.options.length);
       const option = this.state.options[randomNum];
-      alert(option);
+      this.setState(() => {
+        return {
+          selectedOption: option
+        };
+      });
     }
-    handleAddOption(option) {
+    //event for adding an option and validating if the input in the text field is correct
+    handleAddOption = (option) => {
       if (!option) {
         return 'Enter valid value to add item';
       } else if (this.state.options.includes(option) === true) {
@@ -63,7 +52,8 @@ class IndecisionApp extends React.Component {
         };
       });
     }
-    handleDeleteOption(option){
+    //event fo deleting desired option -> !!MUST FIX!!
+    handleDeleteOption = (option) => {
       const index = this.state.options.indexOf(option);
       console.log("index is" + index);
       this.setState((prevState) => {
@@ -71,6 +61,28 @@ class IndecisionApp extends React.Component {
           options: prevState.options.splice(index)
         };
       });
+    }
+    //life cycle methods - fire only in class components
+    componentDidMount = () => {
+      const json = localStorage.getItem("options");
+      const optionsJson = JSON.parse(json);
+      console.log(optionsJson);
+      if(options){
+        this.setState(() => ({
+          options: optionsJson
+        }))
+      }
+    }
+    //another life cycle method
+    componentDidUpdate = (prevProps, prevState) =>{
+      if(prevState.options.length !== this.state.options.length){
+        const json = JSON.stringify(this.state.options);
+        localStorage.setItem("options",json);
+      }
+    } 
+    //another life cycle method
+    componentWillUnMount= () =>{
+      console.log("componentWillMount");
     }
     render() {
       const title = 'Indecision';
@@ -91,6 +103,10 @@ class IndecisionApp extends React.Component {
           <AddOption
             handleAddOption={this.handleAddOption}
           />
+          <OptionModal
+           selectedOption = {this.state.selectedOption}
+           handleModalClose = {this.handleModalClose}
+           />
         </div>
       );
     }

@@ -2,8 +2,7 @@ import React from 'react';
 
 
   //Action stateless function
-const Action=(props) => {
-    return (
+const Action=(props) => (
       <div id="action">
         <button
           id="action-button"
@@ -13,8 +12,7 @@ const Action=(props) => {
           What should I do?
         </button>
       </div>
-    );
-  }
+  )
 
   export default Action;
   //Old class based component:
