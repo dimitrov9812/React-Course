@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import IndecisionApp from './components/IndecisionApp'
+//import the normalize.css to make sure that we start from the same spot and our app
+//will run and look the same on different browsers and on different Operation Systems
+import 'normalize.css/normalize.css';
 //import the styles 
 import './styles/styles.scss';
 //styles are added with SCSS and SASS
