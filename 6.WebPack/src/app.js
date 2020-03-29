@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import IndecisionApp from './components/IndecisionApp'
+//import the styles 
+import './styles/styles.scss';
+//styles are added with SCSS and SASS
 
 //stateless functional component
 
