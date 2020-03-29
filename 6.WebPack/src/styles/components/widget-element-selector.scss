@@ -1,0 +1,20 @@
+.selector__text-field{
+  width: 45rem;
+  height: 3.8rem;
+  margin-top: $m-size;
+  margin-bottom: $m-size;
+  color: $off-white;
+  font-weight: bolder;
+  font-variant-caps: all-petite-caps;
+  padding: 0;
+  font-size: 1.7rem;
+}
+
+//style the error
+.error{
+    font-weight: bolder;
+    font-variant-caps: all-petite-caps;
+    padding: 0;
+    font-size: 1.7rem;
+    color:red;
+}

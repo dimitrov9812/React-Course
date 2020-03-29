@@ -12,11 +12,8 @@ class Option extends React.Component {
    }
     render() {
       return (
-        <div id="option">
-          <span id="option-text">{this.props.optionText}</span>
-            <div className="deleteDiv" id={this.props.optionText} onClick={this.handleDeleteOption}>
-              <span id={this.props.optionText}>X</span>
-            </div>
+        <div className="widget__elements">
+          <span >{this.props.optionText}</span>
         </div>
       );
     }
