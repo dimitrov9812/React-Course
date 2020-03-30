@@ -13,7 +13,7 @@ class Option extends React.Component {
     render() {
       return (
         <div className="widget__elements">
-          <span >{this.props.optionText}</span>
+          <li >{this.props.optionText}</li>
         </div>
       );
     }

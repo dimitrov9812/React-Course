@@ -2,7 +2,7 @@
 .widget{
     background: $light-blue;
     margin-bottom: $m-size;
-    text-align: center;
+    font-variant-caps: all-petite-caps;
 }
 
 // =======Challenge======
@@ -12,10 +12,17 @@
 // l-size padding on all sides
 // center the text using -text-align:center
 /// set the border bottom to a 1px solid lighted version of $light-blue
-
 .widget__elements{
+    color: white;
+    font-size: $big-size;
+    margin: 0 auto;
+    padding: $very-small-size;
+    word-break: break-all;
+}
+.widget__element{
     color: $off-white;
     font-size: $big-size;
+    padding: $m-size;
     margin: 0 auto;
 }
 .widget_element-field{

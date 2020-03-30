@@ -9,10 +9,12 @@
            <button className="button button--link" onClick={props.handleDeleteOptions}>Remove All</button>
         </div>
         <div className="widget_element-field">
-             {props.options.length === 0 && <p className="widget_element">Please add an option to get started</p>}
+             {props.options.length === 0 && <p className="widget__element">Please add an option to get started</p>}
+             <ol>
              {
              props.options.map((option) => <Option key={option} optionText={option} />)
              }
+             </ol>
         </div>
       </div>
   );
