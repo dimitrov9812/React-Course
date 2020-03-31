@@ -14,15 +14,16 @@
 /// set the border bottom to a 1px solid lighted version of $light-blue
 .widget__elements{
     color: white;
-    font-size: $big-size;
+    font-size: 2.5rem;
     margin: 0 auto;
     padding: $very-small-size;
     word-break: break-all;
 }
 .widget__element{
     color: $off-white;
-    font-size: $big-size;
+    font-size: 2.3rem;
     padding: $m-size;
+    text-align: center;
     margin: 0 auto;
 }
 .widget_element-field{
