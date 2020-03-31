@@ -24,15 +24,14 @@ import Header from './../components/Header';
               component={AddExpensePage}
           />
           <Route 
-              path='/edit'
+              path='/edit/:id'
               component={EditExpensePage}
           />
           <Route 
               path='/help'
               component={HelpPage}
           />
-          <Route path="/404" component={NotFoundPage} />
-          <Redirect to="/404" />
+          <Route component={NotFoundPage} />
         </Switch>
     </div>
     </BrowserRouter>
