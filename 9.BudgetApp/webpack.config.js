@@ -3,7 +3,7 @@
  console.log(path.join(__dirname,"public"));
 
  module.exports = {
-    entry: "./src/playground/destructuring_Challenge.js",
+    entry: "./src/playground/destructuring_Array.js",
     output:{
         path: path.join(__dirname,"public"),
         filename:'bundle.js'
@@ -25,7 +25,7 @@
     devtool: 'cheap-module-eval-source-map',
     devServer: {
         contentBase: path.join(__dirname,"public"),
-        historyApiFallback: true
+        historyApiFallback: true 
     }
  };
 
