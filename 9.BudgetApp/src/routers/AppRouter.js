@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 //Imports for the Challenge
 import ExpenseDashboardPage from './../components/ExpenseDashboardPage';
 import AddExpensePage from './../components/AddExpensePage';

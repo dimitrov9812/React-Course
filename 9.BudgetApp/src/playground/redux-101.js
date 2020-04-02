@@ -1,16 +1,44 @@
 import {createStore} from 'redux';
 
+//Creating action generators
+
+//For incrementing
+const incrementCount = ({ incrementBy = 1 } = {}) => ({
+        type: 'INCREMENT',
+        incrementBy
+});
+
+//For decrementing
+const decrementCount = ({ decrementBy = 1 } = {}) => ({
+    type: 'DECREMENT',
+    decrementBy
+});
+
+// ===========Challenge==========
+// 1. Set up action generator for setCount
+// 2. Set up action generator for resetCount
+
+//For setCount
+const setCount = ({setNum}) => ({
+    type: 'SET',
+    setNum
+});
+
+//For resetCount
+const resetCount = () =>(
+ {
+     type: 'RESET'
+ }
+);
 const store = createStore((state = { count: 0}, action) => {
     switch(action.type){
         case "INCREMENT":
-            const incrementBy = typeof action.incrementBy === 'number' ? action.incrementBy : 1;
             return {
-            count : state.count + incrementBy
+            count : state.count + action.incrementBy
             }; 
         case "DECREMENT":
-            const decrementBy = typeof action.decrementBy === 'number' ? action.decrementBy : 1;
             return {
-                count : state.count - decrementBy
+                count : state.count - action.decrementBy
             };
         case "RESET":
             return {
@@ -18,9 +46,9 @@ const store = createStore((state = { count: 0}, action) => {
             };
         case "SET":
                 return {
-                    count : action.count
+                    count : action.setNum
                 };
-        default:
+        default: 
             return state;
     }
 });
@@ -37,12 +65,20 @@ const unsubscribe = store.subscribe(() => {
 // it could be -> walk, stop_walking , incrementwork, stop_working
 // it could be also -> increment the count, decrement the count
 
-store.dispatch({
-    type: 'INCREMENT',
-    incrementBy: 5
-});
+
+store.dispatch(incrementCount({incrementBy:3}));
 
 
+store.dispatch(decrementCount({decrementBy:9}));
+
+store.dispatch(setCount({setNum:22}));
+
+store.dispatch(resetCount());
+
+
+
+
+/*
 store.dispatch({
     type: 'INCREMENT'
 });
@@ -72,5 +108,8 @@ store.dispatch({
     type : 'SET',
     count: 101
 });
+;
+ 
+*/
 
 
