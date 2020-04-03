@@ -30,7 +30,29 @@ const resetCount = () =>(
      type: 'RESET'
  }
 );
-const store = createStore((state = { count: 0}, action) => {
+
+// Reducers
+// -Attributes
+// 1. Reducers are pure functions
+// 2. Never change state or action
+
+
+
+//Not pure function 
+/*,
+let a = 10;
+const add = (b) =>{
+    return a+b;
+};
+
+//Pure function
+
+const add = (a,b) => {
+    return a+b;
+}
+*/
+
+const countReducer = (state = { count: 0}, action) => {
     switch(action.type){
         case "INCREMENT":
             return {
@@ -51,7 +73,9 @@ const store = createStore((state = { count: 0}, action) => {
         default: 
             return state;
     }
-});
+};
+
+const store = createStore(countReducer);
 
 // Does something each time the data in the store has been changed
 const unsubscribe = store.subscribe(() => {
