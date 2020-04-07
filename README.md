@@ -50,9 +50,20 @@ which will teach me the basics.
 - We will create the base style and get familiar with the @import keyword and the scss file structure and naming convention.</br>
 - The last style we will apply is to make our app responsive.</br>
 
-<h2>Soon...</h2>
-<h5>React Router</h5>
-<h5>Redux</h5>
+<h3>9-10. React Routers and Redux Essentials</h3>
+<h5>In the section we will learn:</h5>
+- Setting up Redux.</br>
+- What is dispatching.</br>
+- Working with the store and subscribing to it.</br>
+- Object and array destructuring
+- Reducers - Creating them, working with them, working with multiple reducers.</br>
+- Spread operators</br>
+- Filtering and sorting data with Redux.</br>
+
+
+# Soon...
+<h2>I will make new repository for the rest of the course</h2>
+<h5>Redux with React</h5>
 <h5>Firebase</h5>
 <h5>Deploying applications</h5>
 <h5>Creating a Budget managment app</h5>
